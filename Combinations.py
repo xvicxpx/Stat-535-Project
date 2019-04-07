@@ -1,8 +1,9 @@
 def combinations(N = 1000, n = 100):
     """ 
-    N = how many times will run
-    n = how many time run Sim()
-    will collect all the data into a dictionary of lists
+    Takes in number of repetitions of sim, N, number of games to play in
+    sim, n, for the trials function.
+    Returns a dictionary of lists created by trials, where each key is the 
+    weighting used in trials.
     """
     data = {}
     win_list = []
