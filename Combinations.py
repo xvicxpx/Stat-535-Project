@@ -2,22 +2,27 @@ def combinations(N = 1000, n = 100):
     """ 
     Takes in number of repetitions of sim, N, number of games to play in
     sim, n, for the trials function.
-    Returns a dictionary of lists created by trials, where each key is the 
-    weighting used in trials.
+    Returns two dictionary created by trials, where the keys are the weights
+    used in trials. The first dictionary holds the win rate, the second holds
+    lists of the number of wins that were found. 
     """
-    data = {}
-    win_list = []
+    win_rate_data = {}
+    win_data = {}
+    trial_data = []
     
-    win_list = trials(N = N, n = n)
-    data[(0,0)] = win_list
+    trial_data = trials(N = N, n = n)
+    win_rate_data[(0,0)] = trial_data[0]
+    win_data[(0,0)] = trial_data[1]
     
     for die1 in range (1,7):
         
         for die2 in range (die1, 7):
-            win_list = trials(N = N, n = n, weight1 = die1, weight2 = die2)
-            data[(die1, die2)]  = win_list
+            trial_data = trials(N = N, n = n, weight1 = die1, weight2 = die2)
+            win_rate_data[(die1, die2)] = trial_data[0]
+            win_data[(die1, die2)]  = trial_data[1]
         
-        win_list = trials(N = N, n = n, weight1 = die1)
-        data[(die1, 0)] = win_list
+        trial_data = trials(N = N, n = n, weight1 = die1)
+        win_rate_data[(die1,0)] = trial_data[0]
+        win_data[(die1, 0)] = trial_data[1]
         
-    return data
+    return [win_rate_data, win_data]
