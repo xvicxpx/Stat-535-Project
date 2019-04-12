@@ -18,8 +18,7 @@ def rateDic(dictionary):
         rates_dict[x] = statistics.mean(dictionary[x])
     return rates_dict
 
-
-newDict = rateDic(testDict)
+newDict = rateDic(_____) #Enter the dictionary name
 
 plt.bar(range(len(newDict)), list(newDict.values()), align='center')
 plt.xticks(range(len(newDict)), list(newDict.keys()))
