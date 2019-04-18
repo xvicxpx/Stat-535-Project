@@ -1,4 +1,4 @@
-import Sim
+import Sim as S
 
 def trials(N = 1000, n = 100):
     """ 
@@ -11,7 +11,7 @@ def trials(N = 1000, n = 100):
     test_wins = 0
     
     for test in range(N):
-        test_wins = sim(n = n)
+        test_wins = S.sim(n = n)
         trial[test_wins] += 1
     
     data[(0,0)] = trial
@@ -22,7 +22,7 @@ def trials(N = 1000, n = 100):
             trial = [0 for i in range(n+1)]
             
             for test in range(N):
-                test_wins = sim(n = n, weight1 = die1, weight2 = die2)
+                test_wins = S.sim(n = n, weight1 = die1, weight2 = die2)
                 trial[test_wins] += 1
                 
             data[(die1, die2)] = trial
@@ -30,7 +30,7 @@ def trials(N = 1000, n = 100):
         trial = [0 for i in range(n+1)]    
         
         for test in range(N):
-            test_wins = sim(n = n, weight1 = die1)
+            test_wins = S.sim(n = n, weight1 = die1)
             trial[test_wins] += 1 
             
         data[(die1, 0)] = trial
