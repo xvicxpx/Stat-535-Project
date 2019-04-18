@@ -1,3 +1,5 @@
+import Sim
+
 def trials(N = 1000, n = 100):
     """ 
     N = how many times will run

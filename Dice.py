@@ -1,12 +1,8 @@
-import Weight
+import Weight as W
+import random as R
 
-def Dice(num1 = None, num2 = None):
-    """ weight1 and weight 2 will be a list 
-        [1,2,3,4,5,6] for normal and a weighted dice will be [1,2,3,4,5,6,6,6,6,6,6]
-        Then select randomly from the list for the dice results. 
-        Returns the sum of the two dices """
+def roll(weight1 = None, weight2 = None):
+    weightlist1 = W.getWeightList(weight1)
+    weightlist2 = W.getWeightList(weight2)
 
-        return Weight(num1) + Weight(num2)
-
-
-
+    return weightlist1[R.randint(0,5)] + weightlist2[R.randint(0,5)]
