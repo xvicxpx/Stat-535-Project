@@ -1,1 +1,24 @@
 #Visualization 
+
+"""
+Takes a dictionary of lists
+Creates a new Dictionary with the same keys but values are the average of the lists of the original
+Then plots them in a bar plot
+
+After examination we will make graphs of the best and worst performances
+"""
+
+import matplotlib.pyplot as plt
+import statistics
+
+rates_dict = {}
+
+def rateDic(dictionary):
+    for x in dictionary:
+        rates_dict[x] = statistics.mean(dictionary[x])
+    return rates_dict
+
+newDict = rateDic(_____) #Enter the dictionary name
+
+plt.bar(range(len(newDict)), list(newDict.values()), align='center')
+plt.xticks(range(len(newDict)), list(newDict.keys()))
