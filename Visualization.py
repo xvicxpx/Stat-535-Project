@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import Combinations as c
 
 rates_dict = {}
-testDict = c.combinations(N=100, n=10)
+testDict = c.combinations(N=100, n=10)[0]
 
 plt.bar(range(len(testDict)), list(testDict.values()), align='center')
 plt.xticks(range(len(testDict)), list(testDict.keys()), rotation = 'vertical')
