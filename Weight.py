@@ -4,21 +4,18 @@ def getWeightList(num = None):
     Using the formula 2/x + 2/x + 2/x + 2/x + 1/x + 3/x = 1. 
     We can also change how heavy we want to weight the dice depending on the numerators we want to give"""
 
-    weight_list = [None] * 5
+    weight_list = [None] * 6
 
-    def pair(self):
+    def pair(num):
         pair_dic = {1:6,6:1,2:5,5:2,3:4,4:3}
         return pair_dic.get(num)
 
     if num == None:
-        weight_list = [1/6,1/6,1/6,1/6,1/6]
+        weight_list = [1/6,1/6,1/6,1/6,1/6,1/6]
     else:
-        for i in range(5):
+        for i in range(6):
             weight_list[i] = 2/12
         weight_list[num-1] = 3/12
-        weight_list[pair(5) - 1] = 1/12
+        weight_list[pair(num) - 1] = 1/12
         
     return weight_list
-    
-
-    
