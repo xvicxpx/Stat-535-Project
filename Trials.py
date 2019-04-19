@@ -1,3 +1,6 @@
+
+import Sim as S
+
 def trials(N = 1000, n = 100, weight1 = none, weight2 = none):
     """ 
     Takes in number of repetitions of sim, N, number of games to play in
@@ -17,3 +20,4 @@ def trials(N = 1000, n = 100, weight1 = none, weight2 = none):
     win_rate = total_wins/(N*n)
     
     return [win_rate, trial]
+
