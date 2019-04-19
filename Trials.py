@@ -1,38 +1,23 @@
+
 import Sim as S
 
-def trials(N = 1000, n = 100):
+def trials(N = 1000, n = 100, weight1 = none, weight2 = none):
     """ 
-    N = how many times will run
-    n = how many time run Sim()
-    will collect all the data into a dictionary of lists
+    Takes in number of repetitions of sim, N, number of games to play in
+    sim, n, and weights for the dice.
+    Returns a float and a list. The float holds the win rate for the weights.
+    The list holds the number of times x wins were found in N trials.
     """
-    data = {}
     trial = [0 for i in range(n+1)]
     test_wins = 0
+    total_wins = 0
     
     for test in range(N):
-        test_wins = S.sim(n = n)
+        test_wins = sim(n = n, weight1 = weight1, weight2 = weight2)
         trial[test_wins] += 1
+        total_wins += test_wins
+        
+    win_rate = total_wins/(N*n)
     
-    data[(0,0)] = trial
-    
-    for die1 in range (1,7):
-        
-        for die2 in range (die1, 7):
-            trial = [0 for i in range(n+1)]
-            
-            for test in range(N):
-                test_wins = S.sim(n = n, weight1 = die1, weight2 = die2)
-                trial[test_wins] += 1
-                
-            data[(die1, die2)] = trial
-        
-        trial = [0 for i in range(n+1)]    
-        
-        for test in range(N):
-            test_wins = S.sim(n = n, weight1 = die1)
-            trial[test_wins] += 1 
-            
-        data[(die1, 0)] = trial
-        
-    return data
+    return [win_rate, trial]
+
