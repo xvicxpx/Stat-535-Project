@@ -14,6 +14,3 @@ def play_game(weight1 = None, weight2 = None):
                 return True
             if(hold == 7):
                 return False
-            
-
-
