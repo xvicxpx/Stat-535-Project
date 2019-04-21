@@ -10,3 +10,11 @@ __pycache__/Play.cpython-37.pyc
 __pycache__/Sim.cpython-37.pyc
 __pycache__/Trials.cpython-37.pyc
 __pycache__/Weight.cpython-37.pyc
+.DS_Store
+.DS_Store
+__pycache__/Combinations.cpython-36.pyc
+__pycache__/Dice.cpython-36.pyc
+__pycache__/Play.cpython-36.pyc
+__pycache__/Sim.cpython-36.pyc
+__pycache__/Dice.cpython-36.pyc
+*.pyc
